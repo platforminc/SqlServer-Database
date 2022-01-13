@@ -11,7 +11,9 @@ steps:
   inputs:
     solution: SqlServerDatabase.sln
     msbuildArchitecture: x64
-    msbuildArguments: '/p:OutDir=$(Build.ArtifactStagingDirectory)'
+    # msbuildArguments: '/p:OutDir=$(Build.ArtifactStagingDirectory)'
+    msbuildArguments: '/property:DSP="Microsoft.Data.Tools.Schema.Sql.SqlAzureV12DatabaseSchemaProvider"'
+
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
