@@ -3,6 +3,9 @@ pool:
   demands: msbuild
 
 steps:
+- task: NuGetCommand@2
+  displayName: 'NuGet restore'
+
 - task: MSBuild@1
   displayName: 'Build solution SqlServerDatabase.sln'
   inputs:
