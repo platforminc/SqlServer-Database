@@ -1,0 +1,14 @@
+pool:
+  name: Azure Pipelines
+  demands: msbuild
+
+steps:
+- task: MSBuild@1
+  displayName: 'Build solution SqlServerDatabase.sln'
+  inputs:
+    solution: SqlServerDatabase.sln
+    msbuildArchitecture: x64
+    msbuildArguments: '/p:OutDir=$(Build.ArtifactStagingDirectory)'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
