@@ -63,5 +63,6 @@
     <Build Include="Product.sql" />
     <Build Include="grades.sql" />
     <Build Include="vwproduct.sql" />
+    <Build Include="vwGrade.sql" />
   </ItemGroup>
 </Project>
